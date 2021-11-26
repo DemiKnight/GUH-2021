@@ -6,3 +6,4 @@ Code for team Calgary, in the Great Uni Hack of 2021.
 - Mariyan Nakev
 - Scott Shokoya
 - Alex Knight
+- Felix
