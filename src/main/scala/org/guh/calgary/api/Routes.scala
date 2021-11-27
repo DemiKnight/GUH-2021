@@ -6,7 +6,9 @@ import akka.http.scaladsl.model.headers._
 import akka.http.scaladsl.server._
 import akka.http.scaladsl.server.Directives._
 import org.guh.calgary.api.sysadmin.SysadminBookingRoute
-
+import de.heikoseeberger.akkahttpjson4s.Json4sSupport
+import org.json4s.native.Serialization
+import org.json4s.{DefaultFormats, Serialization}
 
 object Routes {
   val bookingRoute: Route = path("booking")(BookingRoute.route)
@@ -26,7 +28,10 @@ object Routes {
 }
 
 
-trait RouteBase {
+trait RouteBase extends Json4sSupport {
+  implicit val formats: DefaultFormats = DefaultFormats
+  implicit val serialisation: Serialization = Serialization
+
   val route: Route = pathEnd {
     get (complete(StatusCodes.NotImplemented, "Not Implemented")) ~
     post (complete(StatusCodes.NotImplemented, "Not Implemented")) ~
