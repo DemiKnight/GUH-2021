@@ -1,0 +1,35 @@
+.div-bg {
+    position: relative;
+}
+
+.bar-title {
+    font-size: x-large;
+    position: relative;
+    text-align: center;
+}
+
+.search-bar {
+    position: relative;
+    box-shadow: 0 0 2px rgb(0 0 0 / 20%), 0 -1px 0 rgb(0 0 0 / 2%);
+    width: 392px;
+    height: 48px;
+    padding: 12px 104px 11px 64px;
+    box-sizing: border-box;
+    border-radius: 8px 8px 0 0;
+    margin-left: 40%;
+}
+
+.search-form {
+    display: block;
+    text-align: left;
+    overflow: hidden;
+    margin-top: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.search-input {
+    left: 0;
+    border: 0;
+    overflow: visible;
+}
