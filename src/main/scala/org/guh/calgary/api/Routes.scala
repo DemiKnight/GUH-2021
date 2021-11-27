@@ -28,16 +28,9 @@ object Routes {
 
 trait RouteBase {
   val route: Route = pathEnd {
-    get {
-      complete(StatusCodes.NotImplemented, "Not Implemented")
-    } ~
-    post {
-      complete(StatusCodes.NotImplemented, "Not Implemented")
-    } ~ put {
-      complete(StatusCodes.NotImplemented, "Not Implemented")
-    } ~ delete {
-      complete(StatusCodes.NotImplemented, "Not Implemented")
-    }
-
+    get (complete(StatusCodes.NotImplemented, "Not Implemented")) ~
+    post (complete(StatusCodes.NotImplemented, "Not Implemented")) ~
+    put (complete(StatusCodes.NotImplemented, "Not Implemented")) ~
+    delete (complete(StatusCodes.NotImplemented, "Not Implemented"))
   }
 }
