@@ -1,6 +1,7 @@
 package org.guh.calgary.api
 
 import akka.http.scaladsl._
+import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.model.headers._
 import akka.http.scaladsl.server._
 import akka.http.scaladsl.server.Directives._
@@ -26,5 +27,17 @@ object Routes {
 
 
 trait RouteBase {
-  val route: Route
+  val route: Route = pathEnd {
+    get {
+      complete(StatusCodes.NotImplemented, "Not Implemented")
+    } ~
+    post {
+      complete(StatusCodes.NotImplemented, "Not Implemented")
+    } ~ put {
+      complete(StatusCodes.NotImplemented, "Not Implemented")
+    } ~ delete {
+      complete(StatusCodes.NotImplemented, "Not Implemented")
+    }
+
+  }
 }

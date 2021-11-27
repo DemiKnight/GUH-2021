@@ -1,5 +1,7 @@
 package org.guh.calgary.api.sysadmin
 
-object SysadminCarRoute {
+import org.guh.calgary.api.RouteBase
+
+object SysadminCarRoute extends RouteBase {
 
 }
