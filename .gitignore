@@ -60,3 +60,5 @@ jitwatch.out
 .bloop
 project/**/metals.sbt
 .bsp/
+
+sbt.jar
