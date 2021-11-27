@@ -1,4 +1,4 @@
-package `org.guh.calgary`.models
+package org.guh.calgary.models
 
 import java.time.LocalDateTime
 import enumeratum._

@@ -64,3 +64,5 @@ project/**/metals.sbt
 sbt.jar
 
 frontend/node_modules/
+
+*.sc
