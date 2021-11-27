@@ -1,9 +1,14 @@
 import React from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
+function getDimensions() {
+  const { innerWidth, innerHeight } = window
+  return { innerWidth, innerHeight }
+}
+
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: getDimensions().innerWidth,
+  height: getDimensions().innerHeight / 1.25
 };
 
 const center = {
@@ -11,21 +16,24 @@ const center = {
   lng: -2.2408077
 };
 
-function Map() {
-  return (
-    <LoadScript
-      googleMapsApiKey="AIzaSyAi7fqe7ou0PmXQOk2eDcYPsXicBctqmrY"
-    >
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={15}
+class Map extends React.Component {
+  render() {
+    return (
+      <LoadScript
+        googleMapsApiKey="AIzaSyAi7fqe7ou0PmXQOk2eDcYPsXicBctqmrY"
       >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-    </LoadScript>
-  )
+        <GoogleMap
+          id='map-container'
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={15}
+        >
+          { /* Child components, such as markers, info windows, etc. */ }
+          <></>
+        </GoogleMap>
+      </LoadScript>
+    )
+  }
 }
 
 export default React.memo(Map)
