@@ -1,11 +1,30 @@
 .idea/
 .vscode/
 .DS_Store
-<<<<<<< HEAD
 target/
 .bsp/
-=======
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 #
 # JARs aren't checked in, they are fetched by sbt
@@ -64,9 +83,3 @@ jitwatch.out
 .bloop
 project/**/metals.sbt
 .bsp/
-<<<<<<< HEAD
->>>>>>> 69e697c46dec2442483a4eea27c837a2ce7a1ada
-=======
-
-sbt.jar
->>>>>>> 7362d4bfb0119807e77c6ba93e531d8bdb8e5241
