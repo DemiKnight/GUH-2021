@@ -1,4 +1,5 @@
 package org.guh.calgary.api
+import akka.actor.typed.ActorRef
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl._
 import akka.http.scaladsl.model.StatusCodes
@@ -10,23 +11,18 @@ import org.guh.calgary.Main
 import org.guh.calgary.models.Booking
 import org.guh.calgary.services.BookingDB
 
+import scala.concurrent.Future
 import scala.concurrent.duration._
 
 object BookingRoute extends RouteBase {
   import akka.actor.typed.scaladsl.AskPattern.schedulerFromActorSystem
   import akka.actor.typed.scaladsl.AskPattern.Askable
 
-  implicit val actorSystem = Main.actorSystem
-  implicit val timeout: Timeout = 3.seconds
 
   override val route: Route = concat {
     put {
-      entity(as[Booking]) { booking =>
-        val success = BookingDB.handler.ask(BookingDB.Add(booking, _))
-
-        onSuccess(success) {
-          case
-        }
+      entity(as[Booking]) { booking: Booking =>
+        complete(s"$booking")
       }
     } ~
     pathSuffix(IntNumber) { number =>

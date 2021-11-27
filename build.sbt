@@ -13,7 +13,9 @@ ThisBuild / libraryDependencies ++= Seq(
 
   // JSON
   "de.heikoseeberger" %% "akka-http-json4s" % "1.38.2",
-  "org.json4s" %% "json4s-native" % "4.0.2",
+  "org.json4s" %% "json4s-native" % "4.0.3",
+  "org.json4s" %% "json4s-ext" % "4.0.3",
+  "com.beachape" %% "enumeratum-json4s" % "1.7.1",
 
   // Logging / Utils
   "ch.qos.logback" % "logback-classic" % "1.2.5",
