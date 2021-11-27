@@ -64,4 +64,9 @@ jitwatch.out
 .bloop
 project/**/metals.sbt
 .bsp/
+<<<<<<< HEAD
 >>>>>>> 69e697c46dec2442483a4eea27c837a2ce7a1ada
+=======
+
+sbt.jar
+>>>>>>> 7362d4bfb0119807e77c6ba93e531d8bdb8e5241
