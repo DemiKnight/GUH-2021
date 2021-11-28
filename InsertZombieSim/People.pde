@@ -1,6 +1,7 @@
 public class People {
   float x, y, velocityX, velocityY;
-  int ballSize = 5;
+  int ballSize = 20;
+  color col = (0);
 
   
   People(float x, float y, float dX, float dY)
@@ -11,33 +12,38 @@ public class People {
     this.velocityY = dY;
   }
   
-  boolean collide(People other)
+  public void setCol(color col) {
+   this.col = col; 
+  }
+  /*boolean collide(People other)
    {
      return (abs(this.x-other.x) < 5  &&  abs(this.y-other.y) < 5);
-   }
-  
+   }*/
+   
+ //<>// //<>// //<>// //<>// //<>//
+
   void move()
   {
     x = x + velocityX;
     y = y + velocityY;
-    if (y < (0 + ballSize) || y > (screenSize - ballSize)) {
-      velocityY = -velocityY;
-    }
-    if (x < (0 + ballSize) || x > (screenSize - ballSize)) {
+    if (x < (ballSize/2) || x > (displayWidth - ballSize/2)) {
       velocityX = -velocityX;
     }
-    if(dist(mouseX, mouseY, width/2, height/2) < bigCircleRadius + smallCircleRadius){
+    if (y < (ballSize/2) || y > (displayHeight - ballSize/2)) {
+      velocityY = -velocityY;
+    }
   }
   
   void render()
   {
-    fill(255);
+    fill(col);
     ellipse(x, y, ballSize, ballSize);
   }
   
   void update()
   {
-  move();
-  render();
-  }
+    //collide();
+    move();
+    render();
+}
 }
