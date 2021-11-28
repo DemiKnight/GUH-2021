@@ -2,6 +2,7 @@ package org.guh.calgary.api
 
 import akka.NotUsed
 import akka.actor.typed.ActorSystem
+import akka.event.Logging.LogLevel
 import akka.http.scaladsl._
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.model.headers._
@@ -28,7 +29,7 @@ object Routes {
 
   val allRoutes = concat(
     pathPrefix("v1") {
-      logRequest("V1 thingy") {
+      logRequest("v1" -> LogLevel(1)) {
         carRoute ~ bookingRoute
       }
     },

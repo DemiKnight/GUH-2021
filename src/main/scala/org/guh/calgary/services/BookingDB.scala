@@ -41,8 +41,26 @@ object BookingDB {
           handle ! Response(DBResult.Success, bookings)
         }
         Behaviors.same
-      case Delete(booking, handle) => ???
-      case Update(booking, handle) => ???
+      case Delete(booking, handle) =>
+        if(bookings.contains(booking)) {
+          val index = bookings.indexOf(booking)
+          bookings = bookings.drop(index)
+        } else {
+          handle ! Response(DBResult.Fail)
+        }
+
+        Behaviors.same
+      case Update(booking, handle) =>
+        if(bookings.contains(booking)) {
+          val index = bookings.indexOf(booking)
+          bookings = bookings.updated(index, booking)
+
+          handle ! Response(DBResult.Success, bookings)
+        } else {
+          handle ! Response(DBResult.Fail)
+        }
+
+        Behaviors.same
       case _ => Behaviors.unhandled
     }
   }

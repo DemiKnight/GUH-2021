@@ -31,9 +31,10 @@ object BookingRoute extends RouteBase {
         }
       }
     } ~
-    pathSuffix(IntNumber) { number =>
+    path(IntNumber) { number =>
+      println("x")
       post {
-        complete("xxx")
+        complete(s"xxx $number")
       } ~ get {
         complete("xx")
       }
