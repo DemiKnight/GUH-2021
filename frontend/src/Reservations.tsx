@@ -145,25 +145,72 @@
 //         </Stack>
 //     );
 // }
-import React from 'react';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DateTimePicker from '@mui/lab/DateTimePicker';
+// import React from 'react';
+// import TextField from '@mui/material/TextField';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+// import LocalizationProvider from '@mui/lab/LocalizationProvider';
+// import DateTimePicker from '@mui/lab/DateTimePicker';
+//
+// export default function BasicDateTimePicker() {
+//     const [value, setValue] = React.useState(new Date());
+//     const date = new Date();
+//     return (
+//         <LocalizationProvider dateAdapter={AdapterDateFns}>
+//             <DateTimePicker
+//                 renderInput={(props) => <TextField {...props} />}
+//                 label="DateTimePicker"
+//                 value={value}
+//                 onChange={(newValue) => {
+//                     setValue(date as Date);
+//                 }}
+//             />
+//         </LocalizationProvider>
+//     );
+// }
+import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
 
-export default function BasicDateTimePicker() {
-    const [value, setValue] = React.useState(new Date());
-    const newValue = new Date();
-    return (
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <DateTimePicker
-                renderInput={(props) => <TextField {...props} />}
-                label="DateTimePicker"
-                value={value}
-                onChange={(newValue) => {
-                    setValue(newValue);
-                }}
-            />
-        </LocalizationProvider>
-    );
+import "react-datepicker/dist/react-datepicker.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+class App extends Component {
+
+    constructor (props) {
+        super(props)
+        this.state = {
+            startDate: new Date()
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
+    }
+
+    handleChange(date) {
+        this.setState({
+            startDate: date
+        })
+    }
+
+    onFormSubmit(e) {
+        e.preventDefault();
+        console.log(this.state.startDate)
+    }
+
+    render() {
+        return (
+            <form onSubmit={ this.onFormSubmit }>
+                <div className="form-group">
+                    <DatePicker
+                        selected={ this.state.startDate }
+                        onChange={ this.handleChange }
+                        name="startDate"
+                        dateFormat="MM/dd/yyyy"
+                    />
+                    <button className="btn btn-primary">Show Date</button>
+                </div>
+            </form>
+        );
+    }
+
 }
+
+export default App;
