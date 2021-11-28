@@ -43,7 +43,7 @@ trait RouteBase extends Json4sSupport {
   import org.json4s.native.Serialization
   import org.json4s.{DefaultFormats, Serialization}
 
-  implicit val formats: Formats = DefaultFormats ++ JavaTimeSerializers.all + Seq(Json4s.serializer(CarStatus))
+  implicit val formats: Formats = DefaultFormats ++ JavaTimeSerializers.all + Json4s.serializer(CarStatus)
   implicit val serialisation: Serialization = Serialization
   implicit val actorSystem: ActorSystem[NotUsed] = Main.actorSystem
   implicit val timeout: Timeout = 3.seconds
