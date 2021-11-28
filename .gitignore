@@ -92,4 +92,4 @@ sbt.jar
 
 frontend/node_modules/
 
-*.sc
+.sc

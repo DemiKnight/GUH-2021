@@ -21,17 +21,11 @@ object Main extends App {
   implicit val actorSystem: ActorSystem[NotUsed] = ActorSystem(Behaviors.empty, "GUH")
   implicit val exContext: ExecutionContextExecutor = actorSystem.executionContext
 
-  val routes: Route = path("test") {
-    get {
-      complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h2>GUH</h2>"))
-    }
-  }
-
   val binding: Future[Http.ServerBinding] = Http()
     .newServerAt(Config.host, Config.port)
     .bind(Routes.allRoutes)
 
-  println(s"Server now online. Please navigate to http://${Config.host}:${Config.port}/test\nPress RETURN to stop...")
+  println(s"Server now online. Please navigate to http://${Config.host}:${Config.port}\nPress RETURN to stop...")
   StdIn.readLine() // let it run until user presses return
   binding
     .flatMap(_.unbind()) // trigger unbinding from the port
