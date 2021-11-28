@@ -1,0 +1,1 @@
+Simple "infection" simulation, only original zombies (red) can spread  the virus and affect healthy people, individuals that have started healthy do not spread the virus.
