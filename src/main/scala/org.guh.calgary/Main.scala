@@ -17,8 +17,24 @@ object Config {
   final val port = 8081
 }
 
+object Core {
+
+  sealed trait CoreCMD
+  final case object Start extends CoreCMD
+
+  def apply(): Behavior[CoreCMD] = Behaviors.setup { context =>
+
+    Behaviors.receiveMessage {
+      case Start =>
+
+        Behaviors.same
+    }
+  }
+
+}
+
 object Main extends App {
-  implicit val actorSystem: ActorSystem[NotUsed] = ActorSystem(Behaviors.empty, "GUH")
+  implicit val actorSystem: ActorSystem[Core.CoreCMD] = ActorSystem[Core.CoreCMD](Core(), "GUH")
   implicit val exContext: ExecutionContextExecutor = actorSystem.executionContext
 
   val binding: Future[Http.ServerBinding] = Http()
