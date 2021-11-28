@@ -167,11 +167,11 @@
 //         </LocalizationProvider>
 //     );
 // }
-import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
+import React, { Component } from 'react'
+import DatePicker from 'react-datepicker'
 
-import "react-datepicker/dist/react-datepicker.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-datepicker/dist/react-datepicker.css"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
 
