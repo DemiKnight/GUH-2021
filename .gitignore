@@ -85,4 +85,11 @@ jitwatch.out
 .metals
 .bloop
 project/**/metals.sbt
+
 .bsp/
+
+sbt.jar
+
+frontend/node_modules/
+
+*.sc

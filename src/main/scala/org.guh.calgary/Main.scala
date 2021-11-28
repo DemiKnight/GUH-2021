@@ -7,6 +7,7 @@ import akka.http.scaladsl.Http
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
+import org.guh.calgary.api.Routes
 
 import scala.concurrent.{ExecutionContextExecutor, Future}
 import scala.io.StdIn
@@ -28,7 +29,7 @@ object Main extends App {
 
   val binding: Future[Http.ServerBinding] = Http()
     .newServerAt(Config.host, Config.port)
-    .bind(routes)
+    .bind(Routes.allRoutes)
 
   println(s"Server now online. Please navigate to http://${Config.host}:${Config.port}/test\nPress RETURN to stop...")
   StdIn.readLine() // let it run until user presses return
