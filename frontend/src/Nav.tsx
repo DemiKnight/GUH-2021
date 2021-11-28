@@ -12,7 +12,12 @@ function Nav() {
             <Toolbar>
                 <IconButton  aria-label="Menu" color="inherit">
                     <MenuIcon aria-haspopup="true"/>
-                    <MapRounded> </MapRounded>
+                    <Drawer
+                        open={true}
+                        variant='permanent'
+                        anchor='bottom'>
+
+                    </Drawer>
                 </IconButton>
 
             </Toolbar>

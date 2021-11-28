@@ -1,19 +1,19 @@
 import React from 'react';
 import './App.css';
-import CarImages from './CarImages';
-import MainBar from './Mainbar';
-import Map from './Map';
-import Nav from './Nav';
+// import Nav from './Nav';
+// import SignIn from './home'
+// import Reservations from "./Reservations";
+import ResponsiveDateTimePickers from "./Reservations";
+
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Nav/>
-        <MainBar/>
-        <CarImages/>
-        <Map/>
-      </div>
+        <div>
+          {/*<Nav/>*/}
+          {/*<SignIn/>*/}
+          <ResponsiveDateTimePickers/>
+        </div>
     )
   }
 }
