@@ -175,7 +175,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
 
-    constructor (props) {
+    constructor (props: any) {
         super(props)
         this.state = {
             startDate: new Date()
