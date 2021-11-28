@@ -10,5 +10,5 @@ ThisBuild / libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
   "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
   "ch.qos.logback" % "logback-classic" % "1.2.5",
-
+  "com.beachape" %% "enumeratum" % "1.7.0",
 )
