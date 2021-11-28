@@ -20,4 +20,6 @@ ThisBuild / libraryDependencies ++= Seq(
   // Logging / Utils
   "ch.qos.logback" % "logback-classic" % "1.2.5",
   "com.beachape" %% "enumeratum" % "1.7.0",
+  "org.tensorflow" % "tensorflow-core-platform" % "0.3.3",
+  "org.tensorflow" % "tensorflow-framework" % "0.3.3",
 )
