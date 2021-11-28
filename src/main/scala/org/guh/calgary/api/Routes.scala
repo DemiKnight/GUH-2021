@@ -12,7 +12,7 @@ import akka.util.Timeout
 import org.guh.calgary.api.sysadmin.SysadminBookingRoute
 import de.heikoseeberger.akkahttpjson4s.Json4sSupport
 import enumeratum.Json4s
-import org.guh.calgary.Main
+import org.guh.calgary.{Core, Main}
 import org.guh.calgary.models.CarStatus
 import org.json4s.Formats
 import org.json4s.ext.JavaTimeSerializers
@@ -46,7 +46,7 @@ trait RouteBase extends Json4sSupport {
 
   implicit val formats: Formats = DefaultFormats ++ JavaTimeSerializers.all + Json4s.serializer(CarStatus)
   implicit val serialisation: Serialization = Serialization
-  implicit val actorSystem: ActorSystem[NotUsed] = Main.actorSystem
+  implicit val actorSystem: ActorSystem[Core.CoreCMD] = Main.actorSystem
   implicit val timeout: Timeout = 3.seconds
 
 

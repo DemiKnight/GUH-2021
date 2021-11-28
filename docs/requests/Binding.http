@@ -1,0 +1,11 @@
+PUT http://localhost:8081/v1/booking
+Content-Type: application/json
+
+{
+  "date": "2021-04-29T13:04:04",
+  "arrivalAirport": "XXX",
+  "destinationAirport": "xxx",
+  "bookingNumber": "xxx"
+}
+
+###

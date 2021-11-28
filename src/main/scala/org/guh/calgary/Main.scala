@@ -1,12 +1,8 @@
 package org.guh.calgary
 
-import akka.NotUsed
 import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.{ActorSystem, Behavior}
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model._
-import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.server.Route
 import org.guh.calgary.api.Routes
 
 import scala.concurrent.{ExecutionContextExecutor, Future}
@@ -18,7 +14,6 @@ object Config {
 }
 
 object Core {
-
   sealed trait CoreCMD
   final case object Start extends CoreCMD
 
